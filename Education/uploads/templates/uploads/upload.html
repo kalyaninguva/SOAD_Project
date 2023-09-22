@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+    <title>upload</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg fixed-top navbar-light" style="background-color: #e3f2fd;">
+        <a class="navbar-brand mx-5" href="#">EDUCATION</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto mx-5">
+                <li class="nav-item mx-3 active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item mx-3 dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Services
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Notes</a>
+                        <a class="dropdown-item" href="#">Payment</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Find Schools</a>
+                        <a class="dropdown-item" href="#">Estimate Salary</a>
+                    </div>
+                </li>
+                <!-- <li class="nav-item mx-3">
+              <a class="nav-link" href="#">Link</a>
+            </li> -->
+                <li class="nav-item mx-3">
+                    <a class="nav-link" href="#">Contact Us</a>
+                </li>
+            </ul>
+            {% if user.is_authenticated %}
+            <li class="nav navbar-nav navbar-right mx-4">
+                <a class="nav-link" href="#">Profile</a>
+            </li>
+            <li class="nav navbar-nav navbar-right mx-4">
+                <a class="nav-link" href="#">Logout</a>
+            </li>
+            {% else %}
+            <li class="nav navbar-nav navbar-right mx-4">
+                <a class="nav-link" href="#">Login</a>
+            </li>
+            <li class="nav navbar-nav navbar-right mx-4">
+                <a class="nav-link" href="#">Sign Up</a>
+            </li>
+            {% endif %}
+        </div>
+    </nav>
+    <form class="jumbotron container" method="POST" enctype="multipart/form-data" style="margin-top: 4rem;">
+        {% csrf_token %}
+        <div class="form-row">
+            <div class="col-md-6 mb-3">
+                <label for="validationDefault01">First name</label>
+                <input name="first_name" type="text" class="form-control" id="validationDefault01"
+                    required>
+            </div>
+            <div class="col-md-6 mb-3">
+                <label for="validationDefault02">Last name</label>
+                <input name="last_name" type="text" class="form-control" id="validationDefault02"
+                    required>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="col-md-4 mb-3">
+                <label for="validationDefault03">Subject name</label>
+                <input name="subject" type="text" class="form-control" id="validationDefault03" required>
+            </div>
+            <div class="col-md-4 mb-3">
+                <label for="validationDefault04">School Name</label>
+                <input name="school_name" type="text" class="form-control" id="validationDefault04" required>
+            </div>
+            <div class="col-md-4 mb-3">
+                <label for="validationDefault05">Date of Submission</label>
+                <input name="date" type="date" class="form-control" id="validationDefault05" required>
+            </div>
+        </div>
+        <div class="form-row">
+            <label for="validationTextarea">Remarks about the notes</label>
+            <textarea class="form-control" id="validationTextarea" placeholder="write your remarks"
+                style="height: 150px; width: 1110px" required name="remarks"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlFile1"></label>
+            <input name="notes_file" type="file" class="form-control-file" id="exampleFormControlFile1">
+        </div>
+        <div class="form-group">
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>
+                <label class="form-check-label" for="invalidCheck2">
+                    I Agree to terms and conditions
+                </label>
+            </div>
+        </div>
+        <button class="btn btn-primary" type="submit">Submit form</button>
+        
+    </form>
+    <div class="text-center">
+        <a href="{% url 'Files' %}"><button class="btn btn-success">Get All Notes</button></a>
+        <a href="{% url 'Search' %}"><button class="btn btn-success">Search Notes</button></a>
+    </div>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+        crossorigin="anonymous"></script>
+
+    <!-- Option 2: jQuery, Popper.js, and Bootstrap JS
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+    -->
+</body>
+
+</html>

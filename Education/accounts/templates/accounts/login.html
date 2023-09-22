@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'accounts/style1.css' %}">
+    <style>
+      body {
+        background-image: url('login.jpg');
+      }
+    </style>
+  </head>
+  <body>
+  <form method="POST">
+  {%csrf_token%}
+<div class="login-box"> 
+  <h1>Login</h1>
+  <div class="textbox">
+    <label for="username"></label>
+    <i class="fas fa-user"></i>
+    <input type="text" name="username" id="username" placeholder="Username">
+  </div>
+
+  <div class="textbox">
+    <label for="password"></label>
+    <i class="fas fa-lock"></i>
+    <input type="password" name="password" id="password" placeholder="Password">
+  </div>
+
+  <button type="submit" class="btn">Login</button>
+  </form>
+
+  <p><a href="{% url 'password_reset' %}">Forgotten your password?</a></p>
+</div>
+  </body>
+</html>
+

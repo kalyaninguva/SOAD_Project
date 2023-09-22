@@ -1,0 +1,67 @@
+{% extends 'mainapp/home.html' %}
+<style>
+  .card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    margin: auto;
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  }
+  
+  
+  
+  .card button {
+    border: none;
+    outline: 0;
+    padding: 12px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 40%;
+    font-size: 18px;
+  }
+  
+  .card button:hover {
+    opacity: 0.7;
+  }
+  </style>
+
+{% block content %}
+<div class="container" style="text-align: center; margin-top: 20%; color: rgb(18, 94, 81); font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
+  <h4 style="font-weight: bolder;">School Of Management</h4>
+  <h1 style="font-weight: 800;">Your School</h1>
+  <button type="button" class="btn btn-primary">Know More</button>
+</div>
+
+<div class="container pt-5"  > 
+  <div class="card mx-2 p-4" style="float:left;width:22%;background-color: rgb(183, 209, 158);">
+  
+    <h3>Get Notes</h1>
+    <p>You can able to access to all the Notes.</p>
+    <p class="text-center"><button class="btn btn-success" >Get Notes</button></p>
+  </div>
+  
+  <div class="card mx-2 p-4" style="float:left;width:22%;background-color: rgb(183, 209, 158);">
+  
+    <h3>Pay Fee</h3>
+    
+    <p>Pay the Fee in Online Mode</p>
+    <p class="text-center"><button class="btn btn-success" >Payments</button></p>
+  </div>
+  <div class="card mx-2 p-4" style="float:left;width:22%;background-color: rgb(183, 209, 158);">
+  
+    <h3>Best Schools</h3>
+    
+    <p>Get Your Preferred Schools with your requirements</p>
+    <p class="text-center"><button class="btn btn-success" >Find Schools</button></p>
+  </div>
+  <div class="card mx-2 p-4" style="float:left;width:22%;background-color: rgb(183, 209, 158);">
+  
+    <h3>Estimate Salary</h3>
+    
+    <p>Get an Estimate of salary for a Post</p>
+    <p class="text-center"><button class="btn btn-success" >Estimate</button></p>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,44 @@
+{% extends 'mainapp/home.html' %}
+{% block content %}
+{% load static%}
+
+    <div class="row" style="margin-top: 5em;" >
+		<div class="col-lg-6">
+			<div class="thumbnail">
+	        <div class="bg-text">
+				<div class="upload_heading">
+					<p><b>Estimate Salary</b> </p>
+        </div>
+        
+				<form method="POST" enctype="multipart/form-data">
+					{% csrf_token %}
+					<div class="form-group">
+					    <label for="experience">Experience</label>
+					    <input name="experience" type="number" class="form-control" id="hospital_name" placeholder="Enter Experience" required>
+		            </div>
+		            <div class="form-group">
+					    <label for="job_location">Job_location</label>
+					    <input name="job_location" type="text" class="form-control" id="disease_name" placeholder="Enter Job Location" required>
+					</div>
+					<div class="form-group">
+					    <label for="score">Score</label>
+					    <input name="score" type="number" class="form-control" id="date" placeholder="Enter Score" required>
+                    </div>
+                    <div class="form-group">
+					    <label for="subject">Subject</label>
+					    <input name="subject" type="text" class="form-control" id="date" placeholder="Enter Subject" required>
+		            </div>
+	                <div class="form-group">
+	                    <button type="submit" class="btn btn-primary">Submit</button>
+	              </div>    
+			  </form>
+			</div>
+			</div>
+		</div>
+		
+	</div>	
+		
+
+	
+	</div>
+{% endblock %}

@@ -1,0 +1,175 @@
+{% extends 'mainapp/home.html' %}
+{% block content %}
+{% if is_student %}
+        <form method="POST">
+            {%csrf_token%}
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6 mx-auto">
+              <div class="card">
+                <div class="card-header text-black">
+                    <h2>Hello {{user.first_name}} {{user.last_name}}</h2>
+                </div>
+                <div class="card-body">
+                    <div class="row" style="margin-left: 20%;">
+                        <div class="col-25">
+                          <label for="username">User Name</label>
+                        </div>
+                        <div class="col-75">
+                          <input type="text" id="username" name="username" value = "{{ user.username }}">
+                        </div>
+                    </div>
+                    <div class="row" style="margin-left: 20%;">
+                        <div class="col-25">
+                          <label for="fname">First Name</label>
+                        </div>
+                        <div class="col-75">
+                          <input type="text" id="fname" name="first_name" value = "{{ user.first_name }}">
+                        </div>
+                    </div>
+                    <div class="row" style="margin-left: 20%;">
+                        <div class="col-25">
+                          <label for="lname">Last Name</label>
+                        </div>
+                        <div class="col-75">
+                          <input type="text" id="lname" name="last_name" value = "{{ user.last_name }}">
+                        </div>
+                    </div>
+                    <div class="row" style="margin-left: 20%;">
+                      <div class="col-25">
+                        <label for="email">Email</label>
+                      </div>
+                      <div class="col-75">
+                        <input type="email" id="email" name="email" value = "{{ user.email }}">
+                      </div>
+                  </div>
+                    <div class="row" style="margin-left: 20%;">
+                        <div class="col-25">
+                          <label for="age">Age</label>
+                        </div>
+                        <div class="col-75">
+                          <input type="number" id="age" name="age" value = "{{ student.age }}">
+                        </div>
+                    </div>
+                    <div class="row" style="margin-left: 20%;">
+                        <div class="col-25">
+                          <label for="gender">Gender</label>
+                        </div>
+                        <div class="col-75">
+                          <input type="text" id="gender" name="gender" value = "{{ student.gender }}">
+                        </div>
+                    </div>
+                    <div class="row" style="margin-left: 20%;">
+                        <div class="col-25">
+                          <label for="age">Phone Number</label>
+                        </div>
+                        <div class="col-75">
+                          <input type="number" id="phone_no" name="phone_no" value = "{{ student.phone_no }}">
+                        </div>
+                    </div>
+                    <div class="row" style="margin-left: 20%;">
+                        <div class="col-25">
+                          <label for="standard">Standard</label>
+                        </div>
+                        <div class="col-75">
+                          <input type="number" id="standard" name="standard" value = "{{ student.standard }}">
+                        </div>
+                    </div>
+                    <div class="row" style="margin-left: 20%;">
+                        <div class="col-25">
+                          <label for="school_name">School Name</label>
+                        </div>
+                        <div class="col-75">
+                          <input type="text" id="school_name" name="school_name" value = "{{ student.school_name }}">
+                        </div>
+                    </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </form>
+    {% else %}
+    <form method="POST">
+        {%csrf_token%}
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 mx-auto">
+          <div class="card">
+            <div class="card-header text-black">
+              <h2>Hello {{user.first_name}} {{user.last_name}}</h2>
+            </div>
+            <div class="card-body">
+              <div class="row"  style="margin-left: 20%;">
+                <div class="col-25">
+                  <label for="username">User Name</label>
+                </div>
+                <div class="col-75">
+                  <input type="username" id="username" name="username" value = "{{ user.username }}">
+                </div>
+            </div>  
+              <div class="row"  style="margin-left: 20%;">
+                    <div class="col-25">
+                      <label for="email">Email Adress</label>
+                    </div>
+                    <div class="col-75">
+                      <input type="email" id="email" name="email" value="{{ user.email }}">
+                    </div>
+                </div>
+                <div class="row" style="margin-left: 20%;">
+                    <div class="col-25">
+                      <label for="fname">First Name</label>
+                    </div>
+                    <div class="col-75">
+                      <input type="text" id="fname" name="first_name" value = "{{ user.first_name }}">
+                    </div>
+                </div>
+                <div class="row" style="margin-left: 20%;">
+                    <div class="col-25">
+                      <label for="lname">Last Name</label>
+                    </div>
+                    <div class="col-75">
+                      <input type="text" id="lname" name="last_name" value = "{{ user.last_name }}">
+                    </div>
+                </div>
+                <div class="row" style="margin-left: 20%;">
+                    <div class="col-25">
+                      <label for="age">Phone Number</label>
+                    </div>
+                    <div class="col-75">
+                      <input type="number" id="phone_no" name="phone_no" value = "{{ administrator.phone_no }}">
+                    </div>
+                </div>
+                <div class="row" style="margin-left: 20%;">
+                    <div class="col-25">
+                      <label for="school_name">School Name</label>
+                    </div>
+                    <div class="col-75">
+                      <input type="text" id="school_name" name="school_name" value = "{{ administrator.school_name }}">
+                    </div>
+                </div>
+                <div class="row" style="margin-left: 20%;">
+                    <div class="col-25">
+                      <label for="established_year">Established Year</label>
+                    </div>
+                    <div class="col-75">
+                      <input type="number" id="established_year" name="established_year" value = "{{ administrator.established_year }}">
+                    </div>
+                </div>
+                <div class="row" style="margin-left: 20%;">
+                    <div class="col-25">
+                      <label for="upload">Certificate</label>
+                    </div>
+                    <div class="col-75">
+                      <input type="file" id="upload" name="upload" value = "{{ administrator.upload }}">
+                    </div>
+                </div>
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</form> 
+{% endif %}
+{%endblock%}

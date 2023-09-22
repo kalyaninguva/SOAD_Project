@@ -1,0 +1,54 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update</title>
+</head>
+<body>
+    <div>
+        <form method = "POST">
+            {% csrf_token %}
+            <div>
+                <label for ="location">Enter Your Location</label>
+                <input type ="text" name="location" id="location" value = {{ data.location }}>
+            </div>
+            <div>
+            <div>
+                <label for="name">School Name</label>
+                <input type="text" name="name" id="name" value = {{ data.name }}>
+            </div>
+            <div>
+                <label for="sid">School Id</label>
+                <input type="number" name="sid" id="sid" value = {{ data.sid }}>
+            </div>
+            <div>
+                <label for="strength">Strength</label>
+                <input type="number" name="strength" id="strength" value = {{ data.strength }}>
+            </div>
+            <div>
+                <label for="adress">Adress</label>
+                <input type="text" name="adress" id="adress" value = {{ data.adress }}>
+            </div>
+            <div>
+                <label for="achievements">Achievements</label>
+                <input type="text" name="achievements" id="achievements" value = {{ data.achievements }}>
+            </div>
+            <div>
+                <label for="capacity">Capacity</label>
+                <input type="number" name="capacity" id="capacity" value = {{ data.capacity }}>
+            </div>
+            <div>
+                <label for="contactInfo">Contact Information</label>
+                <input type="number" name="contactInfo" id="contactInfo" value = {{ data.contactInfo }}>
+            </div>
+            <div>
+                <label for="typeOfSchool">Enter Type Of School</label>
+                <input type="text" name="typeOfSchool" id="typeOfSchool" value = {{ data.typeOfSchool }}>
+            </div>
+            <div>
+                <input type="submit" value = 'Update'>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

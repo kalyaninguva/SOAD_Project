@@ -1,0 +1,38 @@
+<h1>Welcome {{ user.username }}, see the details of Schools</h1>
+
+<h2>Details Of Schools</h2>
+
+<table class="zui-table">
+    <thead>
+        <tr>
+            <th>LOCATION</th>
+            <th>SCHOOL ID</th>
+            <th>NAME</th>
+            <th>STRENGTH</th>
+            <th>TYPE OF SCHOOL</th>
+            <th>ADRESS</th>
+            <th>ACHIEVEMENTS</th>
+            <th>CAPACITY</th>
+            <th>CONTACT INFORMATION</th>
+            <th>SCHOOL HEAD</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for firstname in data %}
+        <tr>
+        <td>{{ firstname.location }}</td>
+        <td>{{ firstname.sid }}</td>
+        <td>{{ firstname.name }}</td>
+        <td>{{ firstname.strength }}</td>
+        <td>{{ firstname.typeOfSchool }}</td>
+        <td>{{ firstname.adress }}</td>
+        <td>{{ firstname.achievements }}</td>
+        <td>{{ firstname.capacity }}</td>
+        <td>{{ firstname.contactInfo }}</td>
+        <td>{{ firstname.enteredBy }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+    </table>
+    <a href="{% url 'update_school' %}">Update Your school(If You are an Administrator)</a>
+    <a href="{% url 'post_school' %}">Add Your school(If You are an Administrator)</a>

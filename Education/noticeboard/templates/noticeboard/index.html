@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Notices</title>
+  <style type="text/css">
+.sidebar-nav-item > a {
+  position: relative;
+  text-decoration: none;
+}
+
+.sidebar-nav-item > a:before {
+content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #000;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transition: all 0.3s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
+}
+
+.row {
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+li.sidebar-nav-item {
+  padding-bottom: .4em;
+}
+
+.row::before,
+.row::after {
+  display: table;
+  content: " ";
+  clear: both;
+}
+
+@media only screen and (min-width: 800px) {
+  .four-twelve {
+    width: calc(100% / 12 * 3.8);
+    float: right;
+  }
+  .eight-twelve {
+    width: calc(100% / 12 * 7.8);
+    float: left;
+  }
+}
+
+@media only screen and (max-width: 799px) {
+  
+  .four-twelve {
+    display: table-footer-group;
+  }
+  .sidebar-about {
+    display: none;
+   }
+  .eight-twelve {
+    display: table-header-group;
+  }
+}
+
+.sidebar-about,
+.sidebar-nav, .blog-post {
+  border: 1px solid lightgray;
+  padding: 0px 15px 15px 15px;
+  border-radius: 3px;
+  -webkit-box-shadow: 0 8px 8px -6px #777;
+  -moz-box-shadow: 0 8px 8px -6px #777;
+  box-shadow: 0 8px 8px -6px #777;
+}
+.blog-post {
+  background-color: rgba(225, 225, 225, .1);
+}
+.sidebar-about,
+.sidebar-nav {
+  padding-top: 10px;
+  margin-top: 0px;
+}
+li.sidebar-nav-item {
+  list-style: none;
+}
+.sidebar-nav-item > a {
+  text-decoration: none;
+  transition: 500ms ease-in-out;
+}
+.sidebar-about {
+  background-color: #DADADA;
+}
+.sidebar-nav-item > a:hover {
+ visibility: visible;
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1); 
+}
+
+.blog-row > a {
+  text-decoration: none;
+}
+.sidebar-heading {
+  font-size: 1.1em;
+}
+body {  
+  color: #336699;
+  font-size: 1.2em;  
+  font-family: "Helvetica Neue", "Segoe UI", Helvetica, Arial, "Lucida Grande", sans-serif;
+  padding: 0 10px;
+}
+.entry-meta {
+  font-size: .9em;
+  padding: 0px 10px 0px 0px;
+  display: block;
+}
+.entry-meta:before {
+  font-family: "FontAwesome";
+  content: "\f073";
+  padding-right: 5px;
+}
+li.sidebar-nav-item:before {
+  font-family: "FontAwesome";
+  content: "\f0f6";
+  padding-right: 5px;
+}
+a {
+  color: #336699;
+  /* text-style: */
+}
+.entry-title {  
+  font-family: 'Roboto Slab';
+}
+
+
+.underlined-example {
+  position: relative;
+  color: #222;
+  text-decoration: none;
+  font-size: 24px;
+  display:inline-block;
+}
+  </style>
+</head>
+<body>
+
+</body>
+</html>
+
+<div class="row">
+  <div class="container">
+
+
+    
+    <main class="blogcontainer eight-twelve" role="main">
+
+    {% for obj in data %}
+      <div class="blog-post">
+        <h2 class="entry-title" itemprop="headline"><a id="fake" href="#" href-data="/public/2016/04/13/">{{ obj.name_of_organisation }}</a></h2>
+        <span class="entry-meta"><time itemprop="datePublished" datetime="2016-04-13">{{ obj.date }}</time>
+			 </span>
+        <br>
+        <span class="entry-summary">
+          Notice Text
+          <br>
+			{{obj.title}}
+            <br>
+      		</span>
+          <br><br>
+          <span class="entry-meta">{{ obj.name }}</span>
+          <span class="entry-meta">{{ obj.designation }}</span>
+      </div>
+      <br>
+      {% endfor %}
+    </main>
+  </div>
+</div>

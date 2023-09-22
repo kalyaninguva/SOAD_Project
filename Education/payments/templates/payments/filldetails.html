@@ -1,0 +1,112 @@
+{% extends 'payments/home.html' %}
+{% load static %}
+{% load widget_tweaks %}
+{% block content %}
+<style>
+  html, body {
+  min-height: 100%;
+  }
+  body, div, form, input, select, p { 
+  padding: 0;
+  margin: 0;
+  outline: none;
+  font-family: Roboto, Arial, sans-serif;
+  font-size: 14px;
+  color: #666;
+  line-height: 22px;
+  }
+  h1 {
+  margin: 15px 0;
+  font-weight: 400;
+  }
+  .testbox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: inherit;
+  padding: 3px;
+  }
+  form {
+  width: 100%;
+  padding: 20px;
+  background: #fff;
+  box-shadow: 0 2px 5px #ccc; 
+  }
+  input, select, textarea {
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  }
+  input:hover, select:hover, textarea:hover {
+  outline: none;
+  border: 1px solid #095484;
+  }
+  input {
+  width: calc(100% - 10px);
+  padding: 5px;
+  }
+  select {
+  width: 100%;
+  padding: 7px 0;
+  background: transparent;
+  }
+  textarea {
+  width: calc(100% - 6px);
+  }
+  .item {
+  position: relative;
+  margin: 10px 0;
+  }
+  input[type="date"]::-webkit-inner-spin-button {
+  display: none;
+  }
+  
+  button {
+  width: 200px;
+  padding: 10px;
+  border: none;
+  -webkit-border-radius: 5px; 
+  -moz-border-radius: 5px; 
+  border-radius: 5px; 
+  background-color: #095484;
+  font-size: 16px;
+  color: #fff;
+  cursor: pointer;
+  }
+  button:hover {
+  background-color: #0666a3;
+  }
+</style>
+<div class="container pt-5">
+  <div class="row pt-5">
+    <div class="col-lg-6 pt-5 my-auto">
+      <h2 class="display-1">Fill details</h2>
+    </div>
+    <div class="col-lg-6 pt-5">
+      <form  method="post" style="background: rgba(153, 255, 153, 0.1); border-radius: 5px;">
+        {% csrf_token %}
+        {% render_field form.first_name style="color:white;background: rgba(153, 255, 153, 0.1);" placeholder="FirstName"%}
+        {% render_field form.last_name style="color:white;background: rgba(153, 255, 153, 0.1);" placeholder="LastName"%}
+        {% render_field form.youremail style="color:white;background: rgba(153, 255, 153, 0.1);" type="Email" placeholder="Email"%}
+        {% render_field form.phonenumber style="color:white;background: rgba(153, 255, 153, 0.1);" placeholder="phonenumber"%}
+        {% render_field form.classandsection style="color:white;background: rgba(153, 255, 153, 0.1);" placeholder="class&sec"%}
+        {% render_field form.guardian_name style="color:white;background: rgba(153, 255, 153, 0.1);" placeholder="Guardian Name"%}
+        {% render_field form.fee_type style="color:black;background: rgba(153, 255, 153, 0.1);" %}
+        {% render_field form.amount style="color:white;background: rgba(153, 255, 153, 0.1);" placeholder="amount"%}
+
+        <button type="submit"> Proceed to payment </button> 
+        </form>
+    </div>
+  </div>
+
+</div>
+
+    
+ {% endblock %}  
+
+
+	
+   
+        
+        
+  
