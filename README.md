@@ -10,7 +10,7 @@ This project is part of the **SOAD_Project** repository, focusing on developing 
 - **apps.py** – Registers the app within the Django project.
 - **models.py** – Defines database models such as Students, Courses, and Enrollments.
 - **views.py** – Handles the logic for rendering web pages and processing user requests.
-- **tests.py** – Contains test cases to ensure the reliability of the system's components.:contentReference[oaicite:10]{index=10}
+- **tests.py** – Contains test cases to ensure the reliability of the system's components.
 
 ---
 
@@ -21,7 +21,7 @@ This project is part of the **SOAD_Project** repository, focusing on developing 
 - **Enrollment System**: Allow students to enroll in courses.
 - **Assessment Tools**: Create and manage quizzes and assignments.
 - **Grade Tracking**: Record and view student grades.
-- **Communication**: Facilitate messaging between students and teachers.:contentReference[oaicite:23]{index=23}
+- **Communication**: Facilitate messaging between students and teachers.
 
 ---
 
@@ -63,10 +63,10 @@ This project is part of the **SOAD_Project** repository, focusing on developing 
 
 - This project is currently under development.
 - Contributions are welcome!
-- For more details, visit the [SOAD_Project Repository](https://github.com/kalyaninguva/SOAD_Project).:contentReference[oaicite:30]{index=30}
+- For more details, visit the [SOAD_Project Repository](https://github.com/kalyaninguva/SOAD_Project).
 
 ---
 
 ## 📄 License
 
-This project is licensed under the MIT License.:contentReference[oaicite:33]{index=33}
+This project is licensed under the MIT License.
